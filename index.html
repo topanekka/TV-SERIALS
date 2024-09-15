@@ -20,773 +20,6 @@
     </script>
 </head>
 
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap');
-
-html,
-body {
-    font-family: "Onest", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-Color: black;
-    background-size: cover;
-    /* Optional: adjust based on your design */
-    background-attachment: fixed;
-    /* Makes the background image fixed */
-    overflow: auto;
-    overflow-x: hidden;
-    /* Allow vertical and horizontal scrolling */
-}
-
-/* Media query for mobile devices */
-@media only screen and (max-width: 768px) {
-    body {
-        background-image: url("webpa/bgm.webp");
-        /* Set aspect ratio to 9:16 */
-        background-size: fixed;
-        /* Fix the width and allow height to adjust */
-        background-attachment: scroll;
-        /* Allow the background image to scroll with the content */
-        padding: 5px;
-    }
-}
-
-/* Custom scrollbar */
-body::-webkit-scrollbar {
-    width: 8px;
-    /* Width of the scrollbar */
-    /* border-radius: 5px; */
-    /* Rounded corners */
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-body::-webkit-scrollbar-track {
-    backdrop-filter: blur(10px);
-    /* Apply blur effect */
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    /* Rounded corners for the thumb */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Add shadow */
-    background-color: rgba(140, 140, 140, 0.308);
-    /* Thumb color */
-    transition: background-color 0.3s ease;
-    /* Smooth transition */
-}
-
-/* Hide scrollbar after 3 seconds */
-body.hide-scrollbar::-webkit-scrollbar {
-    scrollbar-width: thin;
-}
-
-body.hide-scrollbar::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    /* Hide thumb */
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    backdrop-filter: blur(10px);
-    /* Adjust blur strength as needed */
-    background-color: rgba(51, 51, 51, 0.098);
-    /* Adjust background color and opacity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    padding: 12px 25px;
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow: hidden;
-    border-radius: 0;
-}
-
-header img {
-    max-width: auto;
-    height: auto;
-    max-height: 50px;
-}
-
-header .logo-container {
-    display: flex;
-    align-items: center;
-}
-
-header .logo-container p {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin: 0 10px;
-}
-
-header button {
-    width: auto;
-    padding: 0 3px;
-    text-align: center;
-    font-size: 1rem;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    background-color: Green;
-    transition: box-shadow 0.6s ease, background-color 0.6s ease, color 0.6s ease;
-    flex-shrink: 0;
-    margin-left: 20px;
-    font-weight: 900;
-}
-
-header button:hover {
-    color: #fff;
-    background-color: Orange;
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 05px;
-    }
-    header img {
-        max-width: auto;
-        height: auto;
-        max-height: 30px;
-    }
-}
-
-img {
-    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
-    height: auto; /* Maintain the aspect ratio of the image */
-    display: block; /* Remove any default inline styling */
-    margin: 0 auto; /* Center the image horizontally */
-    margin-top: 05px;
-    border-radius: 05px;
-}
-
-.row-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* Align items to the ends */
-    gap: 20px;
-    /* Adjust the gap between elements as needed */
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.center-text {
-    margin: 0;
-    text-align: left;
-    /* Align text to the left */
-    font-weight: 900;
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.112);
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
-    padding: 5px 15px;
-    width: 300px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-@media only screen and (max-width: 800px) {
-    .search-form {
-        width: 190px;
-        height: auto;
-    }
-}
-
-.search-form:hover {
-    background-color: rgba(51, 51, 51, 0.15);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.search-icon {
-    color: white;
-    fill: currentColor;
-    width: 26px;
-    height: 26px;
-    margin-right: 10px;
-}
-
-input {
-    font-family: "Onest", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 6px 0;
-    width: 100%;
-    color: white;
-}
-
-@media only screen and (max-width: 768px) {
-    input {
-        font-size: 15px;
-        padding: 3px 0;
-    }
-}
-
-input::placeholder {
-    color: white;
-    opacity: 0.7;
-}
-
-button {
-    all: unset;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-}
-
-#container {
-    font-family: "Onest", sans-serif;
-    color: white;
-    padding: 05px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(51, 51, 51, 0.098);
-    margin: 0 auto;
-}
-
-/* Media query for larger screens (desktop) */
-@media only screen and (min-width: 601px) {
-    #container {
-        max-width: 75%;
-        /* Set width to 80% for desktop */
-    }
-}
-
-/* Media query for smaller screens (mobile) */
-@media only screen and (max-width: 600px) {
-    #container {
-        max-width: 100%;
-        /* Set initial width to 100% for mobile */
-    }
-}
-
-#containerr3 {
-    font-family: "Onest", sans-serif;
-    color: white;
-    padding: 02px;
-    margin: 0 auto;
-}
-
-/* Media query for larger screens (desktop) */
-@media only screen and (min-width: 601px) {
-    #containerr3 {
-        max-width: 80%;
-        /* Set width to 80% for desktop */
-    }
-}
-
-/* Media query for smaller screens (mobile) */
-@media only screen and (max-width: 600px) {
-    #containerr3 {
-        max-width: 100%;
-        /* Set initial width to 100% for mobile */
-    }
-}
-
-.container2 {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-gap: 25px;
-    align-items: center;
-    justify-content: center;
-}
-
-@media only screen and (max-width: 600px) {
-    .container2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 85%;
-        padding: 0;
-        grid-gap: 25px;
-    }
-}
-
-/* Default styles for all screens */
-.movie-poster {
-    padding: 8px;
-    position: relative;
-    width: 100%;
-    height: auto; /* Default height */
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.112);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-/* Styles for mobile screens */
-@media screen and (max-width: 767px) {
-    .movie-poster {
-        height: auto; /* Height for mobile screens */
-    }
-}
-
-/* Styles for larger laptop screens */
-@media screen and (min-width: 768px) {
-    .movie-poster {
-        height: 200px; /* Height for larger laptop screens */
-    }
-}
-
-.movie-poster:hover {
-    backdrop-filter: blur(10%);
-    background-color: rgba(51, 51, 51, 0.498);
-    box-shadow: 0px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.movie-poster img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 0px;
-}
-
-.movie-poster:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.movie-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    color: #fff;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
-    display: none;
-}
-
-.movie-info h2 {
-    margin: 0;
-    font-size: 20px;
-    text-align: start;
-}
-
-.movie-info p {
-    margin: 5px 0 0;
-    font-size: 13px;
-}
-
-.playlist-container {
-    font-family: "Anek Latin", sans-serif;
-    overflow-x: auto;
-    white-space: nowrap;
-    backdrop-filter: blur(10px); /* Adjust blur strength as needed */
-    background-color: rgba(51, 51, 51, 0.098); /* Adjust background color and opacity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    color: white;
-    overflow: auto;
-}
-
-.playlist-tab {
-    font-family: "Anek Latin", sans-serif;
-    font-size: 1rem;
-    padding: 5px 10px;
-    background-color: #23368900;
-    color: white;
-    display: inline-block;
-    vertical-align: top;
-    text-decoration: none;
-    font-style: normal;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth hover effect */
-    margin-right: -2px; /* Remove gap between tabs */
-}
-
-.playlist-tab:hover {
-    background-color: #da5436;
-    color: white;
-}
-
-.playlist-tab.active {
-    font-weight: bold;
-    backdrop-filter: blur(10px);
-    background-color: white;
-    color: #233689;
-}
-
-.playlist-tab.active:hover {
-    background-color: #D3D3D3;
-    color: #233689;
-}
-
-/* Add a scrollbar when more than three items are present */
-.playlist-container::-webkit-scrollbar {
-    height: 5px;
-    opacity: 0;
-    /* Initially hide scrollbar */
-    transition: opacity 0.5s;
-    /* Add smooth transition for opacity */
-}
-
-.playlist-container:hover::-webkit-scrollbar {
-    opacity: 1;
-    /* Show scrollbar on hover */
-}
-
-.playlist-container::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 2px;
-}
-
-.playlist-container::-webkit-scrollbar-track {
-    background-color: #23368900;
-}
-
-#current-video {
-    background-color: black;
-    border: none;
-    border-radius: 8px;
-}
-
-#player-container {
-    font-family: "Onest", sans-serif;
-    max-width: 80%;
-    border-radius: 08px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Default box shadow */
-}
-
-@media only screen and (max-width: 800px) {
-    #player-container {
-        max-width: 100%;
-        border-radius: 05px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Default box shadow */
-    }
-}
-
-.watermark {
-    font-family: "Onest", sans-serif;
-    position: baseline;
-    /* Set distance from bottom of viewport */
-    text-align: right;
-    margin-right: 10px;
-    font-size: 14px;
-    color: whitesmoke;
-    border-radius: 5px;
-    font-weight: bold;
-    z-index: 9999;
-    margin-top: 10px;
-    margin-bottom: 08px;
-}
-
-footer {
-    font-family: "Onest", sans-serif;
-    width: auto;
-    backdrop-filter: blur(05px);
-    /* Adjust blur strength as needed */
-    background-color: rgba(51, 51, 51, 0.098);
-    /* Adjust background color and opacity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    color: White;
-    text-align: center;
-    font-size: 16px;
-    padding: 8px 8px;
-    font-weight: bold;
-}
-
-a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-p {
-    text-align: justify;
-}
-
-ul {
-    list-style-type: unset;
-    /* Remove default bullet points */
-    /* Remove default left padding */
-    text-align: justify;
-}
-
-li {
-    margin: 0 0 10px;
-    margin-right: 05px;
-}
-
-.card-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-}
-
-.badge {
-    border-radius: 4px;
-    margin-top: 05px;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: start;
-}
-
-.duration {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 12px;
-    font-weight: lighter;
-}
-
-.toggle-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1001;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #fff; /* White background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
-    transition: transform 0.5s, box-shadow 0.3s;
-    animation: pulse-toggle 3s infinite ease-out;
-}
-
-.toggle-button svg {
-    width: 28px; /* Adjust SVG width */
-    height: 28px; /* Adjust SVG height */
-    fill: #010101; /* SVG fill color */
-    transition: transform 0.5s ease; /* Smooth transition for rotation */
-}
-
-.toggle-button.active svg {
-    transform: rotate(260deg); /* Rotate 360 degrees when active */
-}
-
-.telegram-float,
-.bmc-float {
-    position: fixed;
-    right: 20px;
-    z-index: 1000;
-    display: none;
-}
-
-.telegram-float {
-    bottom: 80px;
-}
-
-.bmc-float {
-    bottom: 140px;
-}
-
-.telegram-icon,
-.bmc-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.telegram-icon {
-    background-color: #0088cc;
-    /* Blue background for Telegram */
-    animation: pulse-blue 1.5s infinite ease-out;
-}
-
-.bmc-icon {
-    background-color: #FFDD00;
-    /* Yellow background for Buy Me a Coffee #FFDD00*/
-    animation: pulse-yellow 1.5s infinite ease-out;
-}
-
-.telegram-icon svg {
-    fill: #fff;
-    /* White color for Telegram icon */
-    width: 30px;
-    height: 30px;
-}
-
-.bmc-icon svg {
-    /* Black color for Buy Me a Coffee icon */
-    width: 32px;
-    height: 32px;
-}
-
-.show {
-    display: flex;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slide-in 0.5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.hide {
-    display: flex;
-    animation: slide-out 0.3s forwards cubic-bezier(0.55, 0.085, 0.68, 0.53);
-}
-
-@keyframes slide-in {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-out {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-@keyframes pulse-toggle {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-}
-
-@keyframes pulse-blue {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.5);
-    }
-
-    80% {
-        box-shadow: 0 0 0 14px rgba(0, 136, 204, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 136, 204, 0);
-    }
-}
-
-@keyframes pulse-yellow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 221, 0, 0.5);
-    }
-
-    80% {
-        box-shadow: 0 0 0 14px rgba(255, 221, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 221, 0, 0);
-    }
-}
-
-/* Playlist bar styles */
-.playlist-bar {
-    font-family: "Onest", sans-serif;
-    backdrop-filter: blur(10px);
-    /* Adjust blur strength as needed */
-    background-color: rgba(51, 51, 51, 0.098);
-    /* Adjust background color and opacity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    color: white;
-    /* Set background color to dark gray */
-    overflow: hidden;
-    /* Hide overflowing content */
-    width: 100%;
-    /* Make the playlist bar cover full width */
-    margin: 0 auto;
-    /* Center the playlist bar horizontally */
-    padding: 10px 0;
-    /* Add padding for better spacing */
-    text-align: center;
-    /* Center the playlist items */
-    margin-bottom: 05px;
-}
-
-.playlist-bar .fa {
-    color: white;
-    /* Set icon color to white */
-}
-
-/* Playlist item styles */
-.playlist-itemm {
-    font-family: "Onest", sans-serif;
-    display: inline-block;
-    /* Display playlist items horizontally */
-    margin: 0 10px;
-    /* Add margin for spacing between items */
-    color: white;
-    /* Set text color to white */
-    text-decoration: none;
-    /* Remove default link underline */
-    position: relative;
-    text-align: center;
-    /* Set position to relative for pseudo-element */
-}
-
-/* Playlist item hover effect */
-.playlist-itemm::before {
-    content: '';
-    /* Add pseudo-element */
-    position: absolute;
-    /* Set position to absolute */
-    bottom: -2px;
-    /* Move pseudo-element below the text */
-    left: 0;
-    /* Align pseudo-element with the text */
-    width: 0;
-    /* Set width to 100% */
-    height: 2px;
-    /* Set height for underline */
-    background-color: #fff;
-    /* Set background color to white */
-    transition: width 0.3s ease;
-    /* Add transition effect */
-}
-
-/* Playlist item hover effect */
-.playlist-itemm:hover::before {
-    color: white;
-    width: 100%;
-    /* Expand width on hover */
-}
-
-.playlist-bar a {
-    color: white;
-    /* Set text color of links to white */
-}
-	</style>
 
 
 
@@ -820,8 +53,115 @@ li {
 
 
 
-
-
+<!---------------------->
+<div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=99yJc0q-1O7Lzw', '_blank')">
+                <img src="https://iili.io/dgDrelj.jpg" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Advocate Anjali Awasthi</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=3dMJtYLztYhdCw', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ---aC8thoAugeYZfGdskiQV07AZpfRKiaWw&s" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Anupama</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=nhPItttKhxqhKw', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0Jy3rMp63To1h7yxA189urdxYLcwm4xK5dc3UAJpC6c7mb5FRgrovRE&s=10" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Dil Ko Tumse Pyaar Hua</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=9KEETGsLIDiXGQ', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsYSnP3SpRLU_LdAO10ZNfOdxIdjU1BrIbJA&usqp=CAU" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Do Dooni Pyaar</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=5DvDLHhptPwWxA', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9IyGz9ethPGN-s8TInbJ0NBJIiE070WYGDjhExgkEEfGDSVvOyfFziqYZ&s=10" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Ghum Hai Kisikey Pyaar Meiin</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=WSu2UKm-CxqFmg', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKVmP9afhsh18v9z4utpA5r-SUiLUGiZ7Hgi0E3pfqqGopEuIEl8v0HUw&s=10" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Maati Se Bandhi Dor</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=Yg6yqxg_YqS3bA', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFqXO3haxiUzOLMpMpXB9LuBJlRX4BeqRR9v2cooHdOSf8bLq05rS8um6r&s=10" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Udne Ki Aasha</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=MpZx2LjqDkIjKg', '_blank')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdbpu2dKmP-RKviUGwVeJ3YMlII_0dzvbGow&s" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Yeh Hai Chahatein</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+            <!---------------------->
+            <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=iZ7a6B9rxy4urQ', '_blank')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/59/YRKKH4THGENERATION.png" alt="Movie Poster" loading="lazy">
+                <div class="card-meta">
+                    <div class="badge badge-outline">15 September | Yeh Rishta Kya Kehlata Hai</div>
+                    <div class="duration">
+                        <ion-icon name="time-outline" role="img" class="md hydrated"
+                            aria-label="time outline"></ion-icon>
+                        <time datetime="PT122M">15 Sept • Drama • Hindi</time>
+                    </div>
+                </div>
+            </div><!---------------------->
+<!---------------------->
 <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=lGoHiPQFXcwHZA', '_blank')">
                 <img src="https://iili.io/dgDrelj.jpg" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
@@ -829,11 +169,11 @@ li {
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=4os5l9Zm1SxCJg', '_blank')">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ---aC8thoAugeYZfGdskiQV07AZpfRKiaWw&s" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
@@ -841,23 +181,23 @@ li {
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=KDRIGARBVzdBhA', '_blank')">
-                <img src="https://www.freewatchserialonline.com/uploads/category/dil-ko-tumse-pyaar-hua-6694748ac3b39.jpg" alt="Movie Poster" loading="lazy">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0Jy3rMp63To1h7yxA189urdxYLcwm4xK5dc3UAJpC6c7mb5FRgrovRE&s=10" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
                     <div class="badge badge-outline">14 September | Dil Ko Tumse Pyaar Hua</div>
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=m0C37y3v73NLjA', '_blank')">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsYSnP3SpRLU_LdAO10ZNfOdxIdjU1BrIbJA&usqp=CAU" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
@@ -865,11 +205,11 @@ li {
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=vxLR0WjK9wqVRg', '_blank')">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9IyGz9ethPGN-s8TInbJ0NBJIiE070WYGDjhExgkEEfGDSVvOyfFziqYZ&s=10" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
@@ -877,35 +217,35 @@ li {
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=d1vAYkjyqmnWzg', '_blank')">
-                <img src="https://www.freewatchserialonline.com/uploads/category/maati-se-bandhi-dor-66540800df080.png" alt="Movie Poster" loading="lazy">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKVmP9afhsh18v9z4utpA5r-SUiLUGiZ7Hgi0E3pfqqGopEuIEl8v0HUw&s=10" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
                     <div class="badge badge-outline">14 September | Maati Se Bandhi Dor</div>
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=EWmlz2EDbcCt0A', '_blank')">
-                <img src="https://www.freewatchserialonline.com/uploads/category/udne-ki-aasha-65f263eee6b83.jpg" alt="Movie Poster" loading="lazy">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFqXO3haxiUzOLMpMpXB9LuBJlRX4BeqRR9v2cooHdOSf8bLq05rS8um6r&s=10" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
                     <div class="badge badge-outline">14 September | Udne Ki Aasha</div>
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=_FRIOIz05P6uJQ', '_blank')">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdbpu2dKmP-RKviUGwVeJ3YMlII_0dzvbGow&s" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
@@ -913,13 +253,13 @@ li {
                     <div class="duration">
                         <ion-icon name="time-outline" role="img" class="md hydrated"
                             aria-label="time outline"></ion-icon>
-                        <time datetime="PT122M">14th Sept • Drama • Hindi</time>
+                        <time datetime="PT122M">14 Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
-            
+            </div><!---------------------->
+            <!---------------------->
             <div class="movie-poster" onclick="window.open('https://justinz.xyz/play.php?data=NljKV97dyCpLGQ', '_blank')">
-                <img src="https://www.freewatchserialonline.com/uploads/category/yeh-rishta-kya-kehlata-hai-65ec3575933b4.jpg" alt="Movie Poster" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/59/YRKKH4THGENERATION.png" alt="Movie Poster" loading="lazy">
                 <div class="card-meta">
                     <div class="badge badge-outline">14 September | Yeh Rishta Kya Kehlata Hai</div>
                     <div class="duration">
@@ -928,15 +268,15 @@ li {
                         <time datetime="PT122M">14th Sept • Drama • Hindi</time>
                     </div>
                 </div>
-            </div>
+            </div><!---------------------->
             
             
       
             
        
         </div>
-        <div class="watermark">Created by Asl Sports � 2024</div>
-        <footer>Star Plus � 2024 | Designed by Topan Urang</footer>
+        <div class="watermark">Created by Asl Sports © 2024</div>
+        <footer>Star Plus © 2024 | Designed by Topan Urang</footer>
     </div>
 
     <div class="toggle-button" onclick="toggleButtons()">
@@ -1097,4 +437,4 @@ li {
 
 </body>
 
-</html>
+										   </html>
